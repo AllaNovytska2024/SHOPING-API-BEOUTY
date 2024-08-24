@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple|3d-float|font-effect-fire|fire-animation"
+    />
+    <title>SHOPING API BEOUTY by Alla Novytska</title>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="font-effect-fire-animation">SHOPING API BEOUTY</h1>
+      
+      
+      
+    </header>
+    
+    <main>
+        <div class="hello font-effect-fire-animation" >Welcome to SHOPING</div>
+        
+      <div >
+        <form id="priceForm">
+            <label for="productSelect">Choose a product:</label>
+            <select id="productSelect" name="productSelect"></select>
+            <label for="quantity">Enter quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" required>
+            <button class="Calculate"  id="submit">Add to Cart</button>
+        </form>
+        <div id="productContainer"></div>
+        
+        <div id="cartContainer">
+            <h2 class="colorFont">Cart</h2>
+            <ul class="colorFont" id="cartList"></ul>
+            <p id="totalPrice">Total Price: $0.00</p>
+        </div>
+    
+        <script src="script.js"></script>
+</div>
+    <form id="parameterForm">
+        <label for="limit">Enter limit:</label>
+        <input type="number" id="limit" name="limit" min="1" required>
+        <label for="skip">Enter skip:</label>
+        <input type="number" id="skip" name="skip" min="0" required>
+        <button type="submit">Get Products</button>
+    </form>
+    <div id="productContainer"></div>
+
+    <script src="script.js"></script>
+
+
+
+        <div  id="container-products" class="container-products">
+          <div id="loader" class="loader loader-hide"></div>
+        </div>
+      </div>
+
+
+    </main>
+    <footer>
+
+      <div class="span">
+
+        
+        <span>
+          practice * * * @ author Alla Novytska * * * © 2024 * * * Germany all
+          right reserved</span
+        >
+      </div>
+    </footer>
+  </body>
+</html>
