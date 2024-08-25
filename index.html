@@ -27,6 +27,8 @@
         <a href="">profile</a>
         <a href="">logout</a>
         <span class="burger-menu">☰</span>
+
+
       </nav>
 
       <div class="font-effect-fire-animation side-menu side-menu-hide">
@@ -38,65 +40,61 @@
         <a href="">culture</a>
         <a href="">profile</a>
         <a href="">logout</a>
+<div>
+
+</div>
+        <div class="welcome">
+          <div class="hello font-effect-fire-animation">Welcome to SHOPING
+          </div>
+  
+          <div class="corg">
+            <form id="priceForm">
+              <label for="productSelect">Choose a product:</label>
+              <select id="productSelect" name="productSelect"></select>
+              <label for="quantity">Enter quantity:</label>
+              <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="1"
+                required
+              />
+              <button class="Calculate" id="submit">Add to Cart</button>
+            </form>
+          </div>
+  
+          
+            <div id="cartContainer">
+              <h2 class="colorFont">Cart</h2>
+              <ul class="colorFont" id="cartList"></ul>
+              <p id="totalPrice">Total Price: $0.00</p>
+            </div>
+  
+            <form id="parameterForm">
+              <label for="limit">Enter limit:</label>
+              <input type="number" id="limit" name="limit" min="1" required />
+              <label for="skip">Enter skip:</label>
+              <input type="number" id="skip" name="skip" min="0" required />
+              <button type="submit">Get Products</button>
+            </form>
+          
       </div>
       
     </header>
 
     <main>
-      <div class="welcome">
-        <div class="hello font-effect-fire-animation">Welcome to SHOPING
-        </div>
-
-        <div class="corg">
-          <form id="priceForm">
-            <label for="productSelect">Choose a product:</label>
-            <select id="productSelect" name="productSelect"></select>
-            <label for="quantity">Enter quantity:</label>
-            <input
-              type="number"
-              id="quantity"
-              name="quantity"
-              min="1"
-              required
-            />
-            <button class="Calculate" id="submit">Add to Cart</button>
-          </form>
-        </div>
-
-        <div>
-          <div id="cartContainer">
-            <h2 class="colorFont">Cart</h2>
-            <ul class="colorFont" id="cartList"></ul>
-            <p id="totalPrice">Total Price: $0.00</p>
-          </div>
-
-          <form id="parameterForm">
-            <label for="limit">Enter limit:</label>
-            <input type="number" id="limit" name="limit" min="1" required />
-            <label for="skip">Enter skip:</label>
-            <input type="number" id="skip" name="skip" min="0" required />
-            <button type="submit">Get Products</button>
-          </form>
-        </div>
-          <div id="productContainer">
-          </div>
-          <script src="script.js">
-          </script>
- </div>
-
-        <div id="container-products" class="container-products">
-          <div id="loader" class="loader loader-hide"></div>
-        </div>
+      <div id="container-products" class="container-products">
+      <div id="loader" class="loader loader-hide"></div>
       </div>
     </main>
     
     
     <footer>
-      
+      <div class="span">
         <span>
           practice * * * @ author Alla Novytska * * * © 2024 * * * Germany all
           right reserved</span>
-     
+     </div>
     </footer>
   </body>
 </html>

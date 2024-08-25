@@ -86,6 +86,12 @@ header {
   top: 50%;
   left: 50%;
 }
+
+.loader-hide {
+  display: none;
+}
+
+
 @keyframes rotation {
     0% {
       transform: rotate(0deg);
@@ -99,10 +105,11 @@ header {
 .welcome {
   width: 100%;
   background-color: rgb(195, 245, 245);
-  position: relative;
+ 
+  position: fixed;
   padding: 15px ;
   font-size: larger;
-  grid-template-columns: 120px 120px 120px;
+  
   gap: 15px;
   justify-content: space-between;
   font-style: italic;
@@ -110,21 +117,24 @@ header {
 
 main{
 padding: 0px;
+flex: 1;
 }
 
 footer {
-  display: flex;
-  align-items: center;
-  background-color: gold;
-  color: rgb(112, 89, 32);
   width: 100%;
-  height: 80px;
+  height: 50px;
+  background-color: gold;
+}
+
+.span {
   justify-content: space-between;
-  padding: 10px;
-  
-  align-items: start;
-  justify-content: center;
-  padding-bottom: 0;
+  text-align: center;
+  padding-top: 10px;
+  margin: 3px 9px 48px 9px;
+  color: goldenrod;
+}
+.span:hover {
+  color: rgba(53, 25, 25, 0.542);
 }
 
 #cartContainer {
@@ -133,9 +143,42 @@ footer {
   font-size: large;
 }
 
-#productContainer{
 
+
+.container-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
 }
+#productContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+}
+
+
+.product-card {
+  border: 5px double gold;
+  border-radius: 20px;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+#productForm {
+  background-color: #ecd23c;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.card-img {
+  width: 80%;
+  height: auto;
+}
+
+
 .span {
     justify-content: space-between;
     text-align: left;
@@ -151,14 +194,13 @@ footer {
   .side-menu {
     position: fixed;
     display: flex;
-    flex-direction: column;
-    background-color:  #2b5e35;
+    flex-direction: row;
+    background-color:  gold;
     top:80px;
     right: 0px;
     width: 100%;
     
+    
   }
 
-  
-  
-  
+ 
