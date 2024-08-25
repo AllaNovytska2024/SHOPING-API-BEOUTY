@@ -105,3 +105,5 @@ cartList.addEventListener("click", (event) => {
     updateCartDisplay();
   }
 });
+
+

@@ -136,6 +136,13 @@ footer {
   color: rgba(53, 25, 25, 0.542);
 }
 
+.gold-hover{
+  background-color: goldenrod;
+}
+.gold-hover:hover{
+  color: gold;
+}
+
 #cartContainer {
   color: rgb(254, 5, 5);
   font: solid;
@@ -146,17 +153,18 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 10px;
-  padding-top: 205px;
+  padding-top: 255px;
 }
 #productContainer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 10px;
+  
 }
 
 .product-card {
   border: 5px double gold;
-  border-radius: 20px;
+  border-radius: 35px;
   padding: 20px 30px;
   display: flex;
   flex-direction: column;
