@@ -26,6 +26,12 @@
         <a href="">logout</a>
         <span class="burger-menu">☰</span>
       </nav>
+      <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+        <label for="password">Password (1-30):</label>
+        <input type="number" id="password" name="password" min="1" max="30" required />
+        <button class="gold-hover" type="submit">Submit</button>
       <div class="font-effect-fire-animation side-menu side-menu-hide">
         <a target="_blank" href="https:/">news</a>
         <a href="">tickets</a>
@@ -67,6 +73,7 @@
             <ul class="colorFont" id="cartList"></ul>
             <p id="totalPrice">Total Price: $0.00</p>
           </div>
+          
         </div>
       </div>
     </header>

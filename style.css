@@ -106,13 +106,15 @@ nav > a:hover {
   background-color: rgb(195, 245, 245);
 
   position: fixed;
-  padding: 15px;
+  padding: 15px 15px 0px 15px;
   font-size: larger;
 
   gap: 15px;
   justify-content: space-between;
   font-style: italic;
 }
+
+
 
 main {
   padding: 0px;
@@ -134,6 +136,10 @@ footer {
 }
 .span:hover {
   color: rgba(53, 25, 25, 0.542);
+}
+
+.hidden {
+  display: none;
 }
 
 .gold-hover{
