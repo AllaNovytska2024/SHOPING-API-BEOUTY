@@ -4,7 +4,6 @@ const loader = document.querySelector("#loader");
 const products = [];
 let cart = [];
 
-
 const getProducts = () => {
   // добавили loader
   loader.classList.toggle("loader-hide");
@@ -12,7 +11,7 @@ const getProducts = () => {
   setTimeout(async () => {
     const res = await fetch("https://fakestoreapi.com/products");
     const data = await res.json();
-    data.map(product => {
+    data.map((product) => {
       const card = document.createElement("div");
       card.classList.add("product-card");
       const heading = document.createElement("h4");
@@ -25,9 +24,9 @@ const getProducts = () => {
       card.append(heading, price, img);
       containerProducts.append(card);
     });
-     // убрали loader
+    // убрали loader
     loader.classList.toggle("loader-hide");
   }, 1000);
 };
 
-getProducts()
+getProducts();
