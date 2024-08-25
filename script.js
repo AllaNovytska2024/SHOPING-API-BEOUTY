@@ -1,4 +1,3 @@
-// script.js
 const containerProducts = document.querySelector("#container-products");
 const loader = document.querySelector("#loader");
 const productSelect = document.querySelector("#productSelect");
@@ -38,28 +37,45 @@ getProducts();
 
 function addToCart(productId, quantity) {
   const selectedOption = productSelect.options[productSelect.selectedIndex];
-  const productName = selectedOption.textContent.split(' - ')[0];
-  const productPrice = parseFloat(selectedOption.textContent.split(' - $')[1]);
+  const productName = selectedOption.textContent.split(" - ")[0];
+  const productPrice = parseFloat(selectedOption.textContent.split(" - $")[1]);
 
-  const existingProduct = cart.find(item => item.id === productId);
+  const existingProduct = cart.find((item) => item.id === productId);
   if (existingProduct) {
-    existingProduct.quantity += quantity;
+    if (
+      confirm(
+        "Такой товар уже лежит в корзине. Вы действительно хотите добавить товар еще раз?"
+      )
+    ) {
+      existingProduct.quantity += quantity;
+    }
   } else {
-    cart.push({ id: productId, name: productName, price: productPrice, quantity: quantity });
+    cart.push({
+      id: productId,
+      name: productName,
+      price: productPrice,
+      quantity: quantity,
+    });
   }
   updateCartDisplay();
 }
 
 function updateCartDisplay() {
-  cartList.innerHTML = ''; // Очистка текущего содержимого
+  cartList.innerHTML = ""; // Очистка текущего содержимого
 
-  cart.forEach(item => {
+  cart.forEach((item) => {
+    const totalItemPrice = (item.price * item.quantity).toFixed(2);
     const listItem = document.createElement("li");
-    listItem.textContent = `${item.name} x ${item.quantity}`;
+    listItem.innerHTML = `${item.name} - $${item.price} x ${item.quantity} = $${totalItemPrice}
+      <button class="decrease" data-id="${item.id}">-</button>
+      <button class="increase" data-id="${item.id}">+</button>`;
     cartList.appendChild(listItem);
   });
 
-  const totalPrice = cart.reduce((total, item) => total + item.quantity * item.price, 0);
+  const totalPrice = cart.reduce(
+    (total, item) => total + item.quantity * item.price,
+    0
+  );
   totalPriceElement.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
 }
 
@@ -68,4 +84,24 @@ document.querySelector("#priceForm").addEventListener("submit", (event) => {
   const productId = parseInt(productSelect.value);
   const quantity = parseInt(document.querySelector("#quantity").value);
   addToCart(productId, quantity);
+});
+
+cartList.addEventListener("click", (event) => {
+  if (event.target.classList.contains("decrease")) {
+    const productId = parseInt(event.target.dataset.id);
+    const product = cart.find((item) => item.id === productId);
+    if (product.quantity > 1) {
+      product.quantity -= 1;
+    } else {
+      cart = cart.filter((item) => item.id !== productId);
+    }
+    updateCartDisplay();
+  }
+
+  if (event.target.classList.contains("increase")) {
+    const productId = parseInt(event.target.dataset.id);
+    const product = cart.find((item) => item.id === productId);
+    product.quantity += 1;
+    updateCartDisplay();
+  }
 });
