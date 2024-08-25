@@ -27,6 +27,16 @@ const getProducts = () => {
     // убрали loader
     loader.classList.toggle("loader-hide");
   }, 1000);
+
+  
+const option = document.createElement('option');
+option.value = product.id;
+option.textContent = product.title;
+option.dataset.price = product.price;
+productSelect.appendChild(option);
 };
 
 getProducts();
+
+
+
