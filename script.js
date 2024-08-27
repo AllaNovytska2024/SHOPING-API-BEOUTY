@@ -76,7 +76,7 @@ function updateCartDisplay() {
     (total, item) => total + item.quantity * item.price,
     0
   );
-  totalPriceElement.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+  totalPriceElement.textContent = `Total Price:   $${totalPrice.toFixed(2)}`;
 }
 
 document.querySelector("#priceForm").addEventListener("submit", (event) => {
@@ -105,5 +105,4 @@ cartList.addEventListener("click", (event) => {
     updateCartDisplay();
   }
 });
-
 

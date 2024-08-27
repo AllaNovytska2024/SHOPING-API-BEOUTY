@@ -26,12 +26,16 @@
         <a href="">logout</a>
         <span class="burger-menu">☰</span>
       </nav>
-      <form id="loginForm">
+
+
+      <!-- <form id="loginForm">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required />
         <label for="password">Password (1-30):</label>
         <input type="number" id="password" name="password" min="1" max="30" required />
-        <button class="gold-hover" type="submit">Submit</button>
+        <button class="gold-hover" type="submit">Submit</button> -->
+
+
       <div class="font-effect-fire-animation side-menu side-menu-hide">
         <a target="_blank" href="https:/">news</a>
         <a href="">tickets</a>
@@ -44,14 +48,24 @@
         <div></div>
         <div class="welcome">
           <div class="hello font-effect-fire-animation">
-            Welcome to SHOPING
-            <form id="parameterForm">
+           <p> Welcome to SHOPING</p>
+  <div class="opinion"> Здесь вы можете выбрать количество просматриваемых товаров через кнопку "Enter limit". Далее подтверждаете выбор! 
+  Далее загружается товар на странице, с которым вы можете ознакомиться и добавить в Корзину, через форму "Shoose a product"
+   
+  <br>УДАЧНЫХ ПОКУПОК ! ЗАХОДИТЕ ЕЩЕ! ХОРОШЕГО ДНЯ! </div>
+  
+<div class="form-wrapper" id="form-wrapper">
+  <form id="parameterForm">
               <label for="limit">Enter limit:</label>
               <input type="number" id="limit" name="limit" min="1" required />
               <label for="skip">Enter skip:</label>
               <input type="number" id="skip" name="skip" min="0" required />
               <button type="submit" class="gold-hover">Get Products</button>
             </form>
+</div>
+            
+
+
           </div>
           <div class="corg">
             <form id="priceForm">
@@ -68,18 +82,23 @@
               <button class="Calculate gold-hover" id="submit">Add to Cart</button>
             </form>
           </div>
+
+
           <div id="cartContainer">
             <h2 class="colorFont">Cart</h2>
-            <ul class="colorFont" id="cartList"></ul>
-            <p id="totalPrice">Total Price: $0.00</p>
+            <ul class="colorFont " id="cartList"></ul>
+            <p   id="totalPrice">Total Price: $0.00</p>
           </div>
           
         </div>
       </div>
     </header>
     <main>
+
+      <div id="loader" class="loader loader-hide"></div>
+    
       <div id="container-products" class="container-products">
-        <div id="loader" class="loader loader-hide"></div>
+        
       </div>
     </main>
     <footer>
